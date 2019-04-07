@@ -1,0 +1,49 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_style.css')}}">
+
+<style>
+	.color1 {
+		background-color: {{ color[0] }}
+		/*height: 50px;*/
+	}
+	.color2 {
+		background-color: {{ color[1] }}
+		/*height: 50px;*/
+	}
+</style>
+</head>
+
+<body>
+
+	<!-- <div class='container'> -->
+		<table>
+			{% for x in range(cols) %}
+			<tr>
+				{% for y in range(rows) %}
+				<td height='50px' width='50px' class='color{{ (x+y)%2+1 }}'></td>
+				{% endfor %}
+
+			</tr>
+			{% endfor %}
+		</table>
+		
+	<!-- </div> -->
+
+</body>
+
+</html>
+
+
+
+
+
+
+

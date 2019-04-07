@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+
+	<style>
+		h1 {
+			text-align: center;
+		}
+		.blocks {
+			height: 300px;
+			width: 200px;
+			background-color: skyblue;
+			display: inline-block;
+			border-style: solid;
+			margin-left: 20px;
+		}
+		.outer{
+			margin-left: 325px;
+		}
+		#color {
+			background-color: {{color}};
+		}
+
+	</style>
+
+</head>
+<body>
+	<h1>Welcome!</h1>
+
+	{% if times == 3 %}
+		<div class="outer">
+			{% for x in range(0, times): %}
+				<div class="blocks"></div>
+			{% endfor %}
+		</div>
+	{% endif %}
+
+
+	{% if times != 3 and color == null%}
+		<div class='outer2'>
+			{% for x in range(0, times): %}
+				<div class="blocks"></div>
+			{% endfor %}
+		</div>
+	{% endif %}
+
+
+	{% if color %}
+		<div class='outer2'>
+			{% for x in range(0, times): %}
+				<div class='blocks' id='color'></div>
+			{% endfor %}
+		</div>
+	{% endif %}
+
+
+</body>
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html> -->

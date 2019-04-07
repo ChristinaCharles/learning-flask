@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_style.css')}}">
+	<title>Document</title>
+</head>
+<body>
+
+	<table class="table">
+  <thead>
+    <tr>
+      <!-- <th scope="col">#</th> -->
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Full Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <!-- <th scope="row">1</th> -->
+      <td>{{users[0]['first_name']}}</td>
+      <td>{{users[0]['last_name']}}</td>
+      <td>{{users[0]['first_name']}} {{users[0]['last_name']}}</td>
+
+      <!-- <td>@mdo</td> -->
+    </tr>
+    <tr>
+      <td>{{users[1]['first_name']}}</td>
+      <td>{{users[1]['last_name']}}</td>
+      <td>{{users[1]['first_name']}} {{users[1]['last_name']}}</td>
+      <!-- <td>@fat</td> -->
+    </tr>
+    <tr>
+      <td>{{users[2]['first_name']}}</td	>
+      <td>{{users[2]['last_name']}}</td>
+      <td>{{users[2]['first_name']}} {{users[2]['last_name']}}</td>
+      <!-- <td>@twitter</td> -->
+    </tr>
+  </tbody>
+</table>
+	
+</body>
+</html>
