@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+        />
+        <title>Document</title>
+        <style>
+            .table {
+                margin: 0 auto;
+            }
+            .table th {
+                text-align: center;
+                width: auto;
+            }
+            .table td {
+                text-align: center;
+            }
+            h1 {
+                text-align: center;
+            }
+            form {
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>All the Pets!</h1>
+            <table class="table col-sm-6">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for pet in pets %}
+                    <tr>
+                        <th scope="row">{{pet['pet_id']}}</th>
+                        <td>{{pet['name']}}</td>
+                        <td>{{pet['type']}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="dropdown-divider"></div>
+
+            <form action="/add_pet" method="POST">
+                <h1>Add a Pet!</h1>
+                <div class="form-group row text-center justify-content-center">
+                    <label for="name" class="col-sm-1 col-form-label">Name</label>
+                    <div class="col-sm-4">
+                        <input name="pname" type="text" class="form-control" id="name" />
+                    </div>
+                </div>
+                <div class="form-group row text-center justify-content-center">
+                    <label for="type" class="col-sm-1 col-form-label">Type</label>
+                    <div class="col-sm-4">
+                        <input name="type" type="text" class="form-control" id="type" />
+                    </div>
+                </div>
+                <div class="text-center">
+                    <button name="add_pet" type="submit" class="btn btn-primary">Add</button>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

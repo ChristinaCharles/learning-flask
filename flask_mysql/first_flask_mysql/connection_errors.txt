@@ -1,0 +1,6 @@
+I changed the host to just 'local'
+"Can't connect to MySQL server on 'local'
+
+I took out try: and got an indent error
+
+changed connection.cursor to connection.mogrify. that object has no attribute 'mogrify'
