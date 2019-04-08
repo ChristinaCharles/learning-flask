@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+        />
+        <title>Number Game</title>
+        <style>
+            .card {
+                width: 250px;
+                height: 250px;
+                border-style: solid;
+                border-width: 2px;
+                border-color: black;
+                background-color: {{color}};
+
+            }
+            .green-card {
+                padding-top: 75px;
+            }
+            h5 {
+                text-align: center;
+                vertical-align: middle;
+                color: white;
+                line-height: 200px;
+            }
+            h6 {
+                color: white;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="row text-center">
+                <div class="col">
+                    <h1>Welcome to the great number game!</h1>
+                    <p>I'm thinking of a number between 1 and 100</p>
+                    <p>Take a guess!</p>
+
+                    {% if key == 'high' or key == 'low' %}
+                    <div class="d-flex justify-content-center">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">{{message}}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if key == 'right' %}
+                    <div class="d-flex justify-content-center">
+                        <div class="card green-card">
+                            <div class="card-body">
+                                <h6 class="card-title">{{message}}</h5>
+                                <a href="/" class="btn btn-light">Play again!</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                </div>
+            </div>
+            <div class="container mt-3">
+                <form action="/guess" method="post">
+                    <div class="row justify-content-center">
+                        <div class="col-8">
+                            <input name="guess" type="text" id="num" class="form-control" />
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mt-3">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    <input type="hidden" value="{{num}}" name="num" />
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
