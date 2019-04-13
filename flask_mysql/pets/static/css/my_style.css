@@ -1,0 +1,21 @@
+.table {
+    margin: 0 auto;
+}
+.table th {
+    text-align: center;
+    width: auto;
+}
+.table td {
+    text-align: center;
+}
+h1 {
+    text-align: center;
+}
+form {
+    margin: 0 auto;
+}
+.container {
+    margin: 0 auto;
+    background-color: red; 
+    margin-left: 400px;
+}

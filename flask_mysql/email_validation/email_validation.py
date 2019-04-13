@@ -24,8 +24,6 @@ def add():
 		'em': request.form['email']
 		}
 
-		# em = request.form['email']
-
 		id = mysql.query_db(query, data)
 
 		return redirect('/success')

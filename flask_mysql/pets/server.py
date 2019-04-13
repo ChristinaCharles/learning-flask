@@ -17,8 +17,7 @@ def add_pet():
     'na': request.form['pname'],
     'ty': request.form['type'],
     } 
-    # print(request.form)
-    # nam = request.form['type']
+
 
     pet_id = mysql.query_db(query, data)
     return redirect('/')

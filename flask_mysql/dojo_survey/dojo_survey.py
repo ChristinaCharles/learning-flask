@@ -42,7 +42,7 @@ def result():
         loc = request.form['loc']
         lang = request.form['language']
         txt = request.form['text']
-        flash("success")
+        # flash("success")
 
         return render_template('show.html', nam=nam, loc=loc, lang=lang, txt=txt)
 
